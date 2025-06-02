@@ -1,0 +1,195 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Unique Home Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #fffde7);
+      color: #333;
+      background-image:url('image/anna.jpg');
+    }
+
+    header {
+      background-color: #107ad1;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      background-color:white;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color:rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .hero button {
+      padding: 12px 25px;
+      font-size: 1em;
+      background-color: #ffeb3b;
+      color: #004d40;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #fdd835;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #004d40;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+    }
+     .container {
+            display: flex;
+            justify-content:left;
+            align-items: left;
+            margin-top: 50px;
+            gap: 5px; /* space between items */
+        }
+
+        .container img {
+            width: 200px;
+            height: auto;
+        }
+
+        .text-section {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            max-width: 1000px;
+        }
+        .language{
+          text-align:right;
+        }
+      
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="language section">
+      <label for="language">language:</label>
+      <select id="language" required>
+        <option value="">-- Select language --</option>
+        <option>tamil</option>
+        <option>english</option>
+        <option>hindi</option>
+        <option>french</option><hr>
+      </select><hr>
+    </div>
+   <div class="container">
+        <img src="../image/Alagappa_University_Logo.png" alt="Left Image">
+
+        <div class="text-section">
+        <h1>ALAGAPPA UNIVERSITY</h1><br>
+        <p>அழகப்பா பல்கலைக்கழகம்
+ALAGAPPA UNIVERSITY
+State University | A++ by NAAC (CGPA : 3.59) Dual Mode in the 4th Cycle | Category - I University by UGC
+Karaikudi - 630 003, Tamil Nadu, India</p>
+        </div>
+
+        <img src="../image/chettiyar.jpg" alt="Right Image">
+    </div>
+  </header><hr>
+
+
+  <nav>
+    <a href="#">HOME</a><hr>
+    <a href="/project/reg.html">CLUBS</a><hr>
+    <a href="/mem.html">MEMEBERS</a><hr>
+    <a href="/project/about.html">ABOUT US</a><hr>
+  </nav><hr>
+  <main>
+    <center>
+        <section>
+          <img class="mySlides" src="\image\alagu.jpg" style="width:50%;">
+          <img class="mySlides" src="\image\agac2.jpgg.jpg" style="width:50%">
+          <img class="mySlides" src="../image/slideagac.jpg" style="width:45%">
+        </section>
+    </center>
+</div>
+
+    </main>
+
+  <footer>
+    &copy; 2025 My College | All rights reserved
+  </footer>
+  <script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+</body>
+</html>
