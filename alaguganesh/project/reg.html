@@ -19,7 +19,7 @@
     }
 
     .club-container {
-      display: grid;
+      display:grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
       margin-top:0 30px;
@@ -27,7 +27,11 @@
       margin: 5px 0;
       display: flex ;
       flex-direction:column;
-      gap: 10px;
+      flex:1;
+      gap: 20px;
+      padding: 250px 500px; /* smaller padding */
+      font-size: 15px;    /* reduce text size if needed */
+       border-radius: 10px;
     }
 
     .club-card {
@@ -51,8 +55,7 @@
   </style>
 </head>
 <body>
-  <h1>College Clubs</h1>
-
+  <h1><b>College Clubs</b></h1>
   <div class="club-container">
     <a href="\mem.html">
     <div class="club-card"><div class="club-name">Music Club</div></div></a>
