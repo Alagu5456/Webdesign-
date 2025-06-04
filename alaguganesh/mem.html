@@ -5,10 +5,21 @@
   <title>Club Membership Registration</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       background-color: #f4f4f9;
       padding: 40px;
     }
+    /* Background Video */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
 
     .form-container {
       max-width: 600px;
@@ -71,8 +82,7 @@
 
     button:hover {
       background-color: #0056b3;
-    }
-
+    }    
     .thank-you {
       display: none;
       text-align: center;
@@ -83,9 +93,12 @@
   </style>
 </head>
 <body>
-
+ <video autoplay loop muted class="video-background">
+    <source src="../animi4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <b>
   <div class="form-container" id="formContainer">
-    </video>
     <h2>Club Membership Registration</h2>
     <form id="clubForm">
       <label for="name">Full Name:</label>
@@ -96,6 +109,13 @@
 
       <label for="phone">Phone Number:</label>
       <input type="tel" id="phone" required>
+
+<label for="place">place</label>
+<input type="place" id="place" required>
+
+<label for="date">date</label>
+<input type="date" id="date" required>
+
 
       <label for="dept">Department:</label>
       <select id="dept" required>
@@ -124,18 +144,14 @@
 
       <button type="submit">Register</button>
     </form>
-    <div class="video background">
-      <video autoplay loop muted playsline>
-        <source src="animae.mp4" type="video/mp4">
-        your 
-      </video>
     </div>
+
   </div>
 
   <div class="thank-you" id="thankYouMsg">
     🎉 Thank you for registering! We'll contact you soon.
   </div>
-
+</b>
   <script>
     document.getElementById('clubForm').addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent page reload

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Club Membership Registration</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    C
+    body {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.4); /* Fallback color with transparency */
+    }
+
+    .form-container {
+      max-width: 600px;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      position: relative;
+    }x
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      margin-top: 15px;
+      color: #555;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 4px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      font-size: 1.3em;
+      color: green;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔄 Background Video -->
+  <video autoplay loop muted class="video-background">
+    <source src="../animae.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 📋 Registration Form -->
+  <div class="form-container" id="formContainer">
+    <h2>Club Membership Registration</h2>
+    <form id="clubForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required>
+
+      <label for="dept">Department:</label>
+      <select id="dept" required>
+        <option value="">-- Select Department --</option>
+        <option>Computer Science</option>
+        <option>Electronics</option>
+        <option>Mechanical</option>
+        <option>Civil</option>
+        <option>Electrical</option>
+        <option>Other</option>
+      </select>
+
+      <label for="year">Year:</label>
+      <select id="year" required>
+        <option value="">-- Select Year --</option>
+        <option>1st Year</option>
+        <option>2nd Year</option>
+        <option>3rd Year</option>
+        <option>4th Year</option>
+      </select>
+
+      <label for="message">Why do you want to join?</label>
+      <textarea id="message" rows="4"></textarea>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <div class="thank-you" id="thankYouMsg">
+    🎉 Thank you for registering! We'll contact you soon.
+  </div>
+
+  <script>
+    document.getElementById('clubForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent page reload
+
+      document.getElementById('formContainer').style.display = 'none';
+      document.getElementById('thankYouMsg').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
