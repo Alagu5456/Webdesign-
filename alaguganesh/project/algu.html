@@ -9,17 +9,17 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
+      font-family:'Times New Roman', Times, serif;
     }
 
     body {
-      background: linear-gradient(135deg, #e0f7fa, #fffde7);
-      color: #333;
+      background: linear-gradient(135deg,rgb(8, 136, 196),rgb(13, 9, 233))
+      color(srgb red green blue) #333;
       background-image:url('image/anna.jpg');
     }
 
     header {
-      background-color: #107ad1;
+      background-color: #102dd1;
       color: white;
       padding: 20px 0;
       text-align: center;
@@ -103,7 +103,7 @@
             justify-content:left;
             align-items: left;
             margin-top: 50px;
-            gap: 5px; /* space between items */
+            gap: 100px; /* space between items */
         }
 
         .container img {
@@ -123,7 +123,39 @@
       gap: 20px;
       padding: 250px 500px; /* smaller padding */
       font-size: 15px;    /* reduce text size if needed */
-       border-radius: 10px;
+       border-radius: 20px;
+        }
+        .mySlides{
+          border-radius: 20px;
+          background:linear-gradient(135deg,rgb(19, 84, 204),rgb(28, 159, 177))
+        }
+        .video-container{
+          text-align: center;
+        }
+        video {
+      width: 50%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      gap: 2px;
+    }
+        .gallery{
+          text-align:left;
+          margin:40px 0;
+          gap:50px;
+          display:flex;
+          
+        }
+        h3{
+          font-size: 2em;
+          margin-bottom: 20px;
+        }
+        .gallery img{
+          width: 300px;
+          margin: 10px;
+          border-radius: 20px;
+         transform: scale(1.05);
+         justify-content: center;
+     
         }
 
         .text-section {
@@ -169,7 +201,7 @@ Karaikudi - 630 003, Tamil Nadu, India</p>
 
 
   <nav>
-    <a href="#">HOME</a><hr>
+    <a href="/project/algu.html">HOME</a><hr>
     <a href="/project/reg.html">CLUBS</a><hr>
     <a href="/mem.html">MEMEBERS</a><hr>
     <a href="/project/about.html">ABOUT US</a><hr>
@@ -179,14 +211,23 @@ Karaikudi - 630 003, Tamil Nadu, India</p>
         <section>
           <img class="mySlides" src="\image\alagu.jpg" style="width:50%;">
           <img class="mySlides" src="\image\agac2.jpgg.jpg" style="width:50%">
-          <img class="mySlides" src="../image/slideagac.jpg" style="width:45%">
+          <img class="mySlides" src="../image/slideagac.jpg" style="width:50%">
         </section>
     </center>
-</div>
-<div>
-  
-  <h1>PHOTO GALLERY</h1><hr>
-  <img src="slides" src="image\gal1.jpg" style="width:50%">
+</div><br><br>
+<div class="video-container">
+<video autoplay muted playsinline>
+      <source src="/videoplayback.mp4" type="video/mp4">
+      <source src="/About Alagappa University Short Video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    </div><br>
+    <hr><h3>PHOTO GALLERY</h3>
+<div class="gallery"><hr>
+  <img src="../image/gal2.jpg" alt="gallery1"/>
+  <img src="../image/gal2.jpg" alt="gallery2"/>
+  <img src="../image/gal3.jpg" alt="gallery3"/>
+  <img src="../image/gal4.jpg" alt="gallery4"/>
 
 </div>
 
@@ -210,6 +251,21 @@ function carousel() {
   if (myIndex > x.length) {myIndex = 1}
   x[myIndex-1].style.display = "block";
   setTimeout(carousel, 3000);
+  function filter() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.getElementsByClassName("gallery");
+
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].getElementsByClassName("gallery")[0].innerText.toLowerCase();
+        const desc = cards[i].getElementsByClassName("gallery")[0].innerText.toLowerCase();
+
+        if (title.includes(input) || desc.includes(input)) {
+          cards[i].style.display = "block";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
 }
 </script>
 
