@@ -19,12 +19,24 @@
     }
 
     header {
-      background-color: #102dd1;
+      background-color: #062af3;
       color: white;
-      padding: 20px 0;
+      padding: 15px 0;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
+    .container {
+            display: flex;
+            justify-content:left;
+            align-items: left;
+            margin-top: 50px;
+            gap: 100px; /* space between items */
+        }
+
+        .container img {
+            width: 200px;
+            height: auto;
+        }
 
     nav {
       background-color:white;
@@ -84,7 +96,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #004d40;
+      background-color: #062af3;
       color: white;
       margin-top: 40px;
     }
@@ -98,18 +110,7 @@
         font-size: 1em;
       }
     }
-     .container {
-            display: flex;
-            justify-content:left;
-            align-items: left;
-            margin-top: 50px;
-            gap: 100px; /* space between items */
-        }
-
-        .container img {
-            width: 200px;
-            height: auto;
-        }
+    
         .slides{
       display:grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -133,14 +134,14 @@
           text-align: center;
         }
         video {
-      width: 50%;
-      border-radius: 10px;
+      width: 70%;
+      border-radius: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       gap: 2px;
     }
         .gallery{
           text-align:left;
-          margin:40px 0;
+          margin:20px 0;
           gap:50px;
           display:flex;
           
@@ -162,10 +163,7 @@
             font-size: 20px;
             font-weight: bold;
             text-align: center;
-            max-width: 1000px;
-        }
-        .language{
-          text-align:right;
+            max-width: 10000px;
         }
       
   </style>
@@ -173,16 +171,6 @@
 <body>
 
   <header>
-    <div class="language section">
-      <label for="language">language:</label>
-      <select id="language" required>
-        <option value="">-- Select language --</option>
-        <option>tamil</option>
-        <option>english</option>
-        <option>hindi</option>
-        <option>french</option><hr>
-      </select><hr>
-    </div>
    <div class="container">
         <img src="../image/Alagappa_University_Logo.png" alt="Left Image">
 
@@ -201,17 +189,17 @@ Karaikudi - 630 003, Tamil Nadu, India</p>
 
 
   <nav>
-    <a href="/project/algu.html">HOME</a><hr>
-    <a href="/project/reg.html">CLUBS</a><hr>
-    <a href="/mem.html">MEMEBERS</a><hr>
-    <a href="/project/about.html">ABOUT US</a><hr>
-  </nav><hr>
+    <a href="/project/algu.html">HOME</a>
+    <a href="/project/reg.html">CLUBS</a>
+    <a href="/mem.html">MEMEBERS</a>
+    <a href="/project/about.html">ABOUT US</a>
+  </nav>
   <main>
     <center>
         <section>
-          <img class="mySlides" src="\image\alagu.jpg" style="width:50%;">
-          <img class="mySlides" src="\image\agac2.jpgg.jpg" style="width:50%">
-          <img class="mySlides" src="../image/slideagac.jpg" style="width:50%">
+          <img class="mySlides" src="\image\alagu.jpg" style="width:70%;">
+          <img class="mySlides" src="\image\agac2.jpgg.jpg" style="width:70%">
+          <img class="mySlides" src="../image/slideagac.jpg" style="width:70%">
         </section>
     </center>
 </div><br><br>
@@ -224,7 +212,7 @@ Karaikudi - 630 003, Tamil Nadu, India</p>
     </div><br>
     <hr><h3>PHOTO GALLERY</h3>
 <div class="gallery"><hr>
-  <img src="../image/gal2.jpg" alt="gallery1"/>
+  <img src="../image/gal5.jpg" alt="gallery1"/>
   <img src="../image/gal2.jpg" alt="gallery2"/>
   <img src="../image/gal3.jpg" alt="gallery3"/>
   <img src="../image/gal4.jpg" alt="gallery4"/>

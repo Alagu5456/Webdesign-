@@ -12,17 +12,19 @@
       padding: 0;
     }
     header {
-      background-color: #062af3;
+      background-color:#062af3;
       color: white;
       padding: 20px;
       text-align: center;
+      margin-top: -1px;
+      width: 100%;
     }
     .container {
             display: flex;
             justify-content:left;
             align-items: left;
             margin-top: 50px;
-            gap: 100px; /* space between items */
+            gap: 350px; /* space between items */
         }
 
         .container img {
@@ -40,18 +42,22 @@
       margin: 0 15px;
       text-decoration: none;
       color:black;
-      font-weight: bold;
+      font-weight: bold;    
     }
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
     .container {
             display: flex;
             justify-content:left;
             align-items: left;
-            margin-top: 50px;
-            gap: 400px; /* space between items */
+            margin-top: 40px;
+            gap: 350px; /* space between items */
         }
 
         .container img {
-            width: 150px;
+            width: 200px;
             height: auto;
         }
    
@@ -79,7 +85,7 @@
     h2 {
       text-align: center;
       margin-bottom: 25px;
-      color: #333;
+      color:white;
     }
 
     label {
@@ -129,6 +135,15 @@
     button:hover {
       background-color: #0056b3;
     }    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #062af3;
+      color: white;
+      margin-top: 40px;
+    }
+
+
     .thank-you {
       display: none;
       text-align: center;
@@ -145,7 +160,8 @@
 
         <div class="text-section">
           <center>
-    <h1>About Alagappa University Clubs</h1>
+    <h1>ALAGAPPA UNIVERSITY</h1>
+    <h2>MEMEBER REGISTRATION PORTAL</h2>
     </center>
     </div>
     <img src="../image/chettiyar.jpg" alt="Right Image">
@@ -153,7 +169,7 @@
   </header>
   <nav data-aos="zoom-in">
     <a href="/project/algu.html">HOME</a>
-    <a href="/project/reg.html">REGISTER</a>
+    <a href="/project/reg.html">CLUBS</a>
     <a href="../mem.html">MEMBERS</a>
     <a href="/project/about.html">ABOUT</a>
   </nav>
@@ -166,7 +182,7 @@
   <b>
   <div class="form-container" id="formContainer">
     <center>
-    <h1>ALAGAPPA UNIVERSITY</h1>
+    <h1>CLUB REGISTRATION FORM</h1>
     </center>
     <h2>Club Membership Registration Form</h2>
     <form id="clubForm">
@@ -231,6 +247,10 @@
     </center>
   </div>
 </b>
+ <footer>
+    &copy; 2025 Alagappa University | All rights reserved.
+  </footer>
+
   <script>
     document.getElementById('clubForm').addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent page reload
