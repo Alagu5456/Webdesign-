@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Clubs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#062af3; /* Blue background */
+  padding: 10px;
+  color: white;
+  margin-top: -5px;
+  width: 100%;
+  
+}
+
+.left-logo,
+.right-photo {
+  height: 120px; /* Adjust as needed */
+}
+
+.header-text {
+  text-align: center;
+  flex: 1;
+}
+
+.header-text h1,
+.header-text h2 {
+  margin: 5px;
+}
+/* .fade-down{
+  margin-top: -90px;
+} */
+ nav {
+      background-color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      width:1570px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color:black;
+      font-weight: bold;
+      padding: 10px;
+  
+    }
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+
+    body {
+      font-family:'Times New Roman', Times, serif;
+      background: linear-gradient(-45deg, #74ebd5, #9face6, #ffecd2, #fcb69f);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      min-height: 100vh;
+      padding: 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+    
+      color: #fff;
+      text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    .search-container {
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 450px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+    
+   
+    .container {
+            display: flex;
+            justify-content:left;
+            align-items: left;
+            margin-top: 50px;
+            gap: 350px; /* space between items */
+        }
+
+        .container img {
+            width: 200px;
+            height: auto;
+        }
+   
+
+    .club-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .club-card {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px;
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .club-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .club-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .club-description {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .join-btn {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    
+    }
+    h2{
+      color: white;
+    }
+
+    .join-btn:hover {
+      background: linear-gradient(135deg, #ff4e50, #f9d423);
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #062af3;
+      color: white;
+      margin-top: 50px;
+      width:1570px;
+    }
+
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+ <header data-aos="fade-down">
+    <div class="container">
+        <img src="../templates/image/Alagappa_University_Logo.png" alt="Left Image">
+
+        <div class="text-section">
+          <center>
+        <h1>ALAGAPPA UNIVERSITY</h1>
+        <h2>AVAILABLE CLUBS</h2>
+    </center>
+    </div>
+    <img src="../templates/image/chettiyar.jpg" alt="Right Image">
+    </div>
+  </header>
+</header>
+<nav data-aos="zoom-in">
+    <a href="/project/algu.html">HOME</a>
+    <a href="/project/reg.html">CLUBS</a>
+    <a href="../mem.html">MEMBERS</a>
+    <a href="/project/about.html">ABOUT</a>
+  </nav>
+
+  <main data-aos="fade-up"><br><br>
+    <center>
+  <h2>🌟 Explore Our Clubs</h2>
+    </center>
+<center>
+  <div class="search-container">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search for a club..." onkeyup="filterClubs()">
+  </div>
+</center>
+  <div class="club-container" id="clubContainer">
+    <div class="club-card">
+      <div class="club-title">Science Club</div>
+      <div class="club-description">Explore the wonders of physics, chemistry, and biology with fun experiments.</div>
+      <button class="join-btn">Join Now</button>
+    </div>
+    <div class="club-card">
+      <div class="club-title">Drama Club</div>
+      <div class="club-description">Act, express, and perform in captivating plays and improv sessions.</div>
+      <button class="join-btn">Join Now</button>
+    </div>
+    <div class="club-card">
+      <div class="club-title">Photography Club</div>
+      <div class="club-description">Capture moments and master camera skills with creative projects.</div>
+      <button class="join-btn">Join Now</button>
+    </div>
+    <div class="club-card">
+      <div class="club-title">Literary Club</div>
+      <div class="club-description">Debate, write stories, and dive deep into the world of literature.</div>
+      <button class="join-btn">Join Now</button>
+    </div>
+    <div class="club-card">
+      <div class="club-title">Coding Club</div>
+      <div class="club-description">Build apps, solve coding challenges, and participate in hackathons.</div>
+      <button class="join-btn">Join Now</button>
+    </div>
+    <div class="club-card">
+      <div class="club-title">Music Club</div>
+      <div class="club-description">Jam with musicians, learn instruments, and perform on big stages.</div>
+      <button class="join-btn">Join Now</button>
+    </div>
+  </div>
+   <footer>
+    &copy; 2025 Alagappa University | All rights reserved.
+  </footer>
+
+
+  <script>
+    function filterClubs() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.getElementsByClassName("club-card");
+
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].getElementsByClassName("club-title")[0].innerText.toLowerCase();
+        const desc = cards[i].getElementsByClassName("club-description")[0].innerText.toLowerCase();
+
+        if (title.includes(input) || desc.includes(input)) {
+          cards[i].style.display = "block";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
