@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Club Membership Registration</title>
+  <style>
+    body {
+      font-family:'Times New Roman', Times, serif;
+      background-color: #f4f4f9;
+      padding: 40px;
+      margin: 0;
+      padding: 0;
+      /* display: flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh; */
+    }
+    header {
+      background-color:#062af3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: -1px;
+      width: 100%;
+    }
+    .container {
+            display: flex;
+            justify-content:left;
+            align-items: left;
+            margin-top: 50px;
+            gap: 350px; /* space between items */
+        }
+
+        .container img {
+            width: 200px;
+            height: auto;
+        }
+    nav {
+      background-color: #fff;
+      text-align: center;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color:black;
+      font-weight: bold;    
+    }
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    .container {
+            display: flex;
+            justify-content:left;
+            align-items: left;
+            margin-top: 40px;
+            gap: 350px; /* space between items */
+        }
+
+        .container img {
+            width: 200px;
+            height: auto;
+        }
+   
+    /* Background Video */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+
+    .form-container {
+      max-width: 600px;
+      background-color: #fff;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color:white;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      margin-top: 15px;
+      color: #555;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 4px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox-group input {
+      margin-right: 6px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #062af3;
+      color: white;
+      margin-top: 40px;
+    }
+
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      font-size: 2.5em;
+      color: #2f05e7;
+      padding: 20px;
+      
+    } 
+  </style>
+</head>
+<body>
+    <header data-aos="fade-down">
+    <div class="container">
+        <img src="{{url_for('static',filename='image/Alagappa_University_Logo.png')}}" alt="Left Image">
+
+        <div class="text-section">
+          <center>
+    <h1>ALAGAPPA UNIVERSITY</h1>
+    <h2>MEMEBER REGISTRATION PORTAL</h2>
+    </center>
+    </div>
+    <img src="{{url_for('static',filename='image/chettiyar.jpg')}}" alt="Right Image">
+    </div>
+  </header>
+  <main data-aos="fade-up"><br><br>
+ <video autoplay loop muted class="video-background">
+    <source src="static\animi4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <b>
+  <div class="form-container" id="formContainer">
+    <center>
+    <h1>CLUB REGISTRATION FORM</h1>
+    </center>
+    <h2>Club Membership Registration Form</h2>
+    <form id="clubForm" action="/register" method="POST">
+  <label for="name">name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <label for="place">Place:</label>
+  <input type="text" id="place" name="place" required>
+
+  <label for="date">Date:</label>
+  <input type="date" id="date" name="date" required>
+
+  <label for="dept">Department:</label>
+  <select id="dept" name="dept" required>
+    <option value="">-- Select Department --</option>
+    <option>Computer Science</option>
+    <option>Electronics</option>
+    <option>Mechanical</option>
+    <option>Civil</option>
+    <option>Electrical</option>
+    <option>Other</option>
+  </select>
+
+  <label for="year">Year:</label>
+  <select id="year" name="year" required>
+    <option value="">-- Select Year --</option>
+    <option>1st Year</option>
+    <option>2nd Year</option>
+    <option>3rd Year</option>
+    <option>4th Year</option>
+  </select>
+
+  <label>Clubs you want to join:</label>
+  <div class="checkbox-group">
+    <label><input type="radio" name="clubs" value="Science Club">NSS Club</label>
+    <label><input type="radio" name="clubs" value="Drama Club">Coding Club</label>
+    <label><input type="radio" name="clubs" value="Photography Club">Literary Club</label>
+    <label><input type="radio" name="clubs" value="Literary Club">Robotics Club</label>
+    <label><input type="radio" name="clubs" value="Coding Club">Drama Club</label>
+    <label><input type="radio" name="clubs" value="Music Club">Music Club</label>
+  </div>
+
+  <label for="message">Why do you want to join?</label>
+  <textarea id="message" name="message" rows="4"></textarea>
+
+  <button type="submit">Register</button>
+</form>
+
+    </div>
+
+  </div>
+</b>
+  <div class="thank-you" id="thankYouMsg">
+    <center>
+    🎉 Thank you for registering! We'll contact you soon.
+    </center>
+  </div>
+</b>
+ <!-- <script>
+    document.getElementById('clubForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent page reload
+
+      document.getElementById('formContainer').style.display = 'none';
+      document.getElementById('thankYouMsg').style.display = 'block';
+    });
+  </script> -->
+ <footer>
+    &copy; 2025 Alagappa University | All rights reserved.
+  </footer>
+</body>
+</html>

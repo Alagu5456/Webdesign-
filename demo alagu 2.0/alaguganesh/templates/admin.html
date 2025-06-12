@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard – Club Members</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .admin-table {
+      width: 95%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .admin-table th, .admin-table td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    .admin-table th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .admin-title {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="admin-title">📋 Registered Club Members</h2>
+<nav>
+    <a href="/algu">HOME</a>
+    <a href="/club_list">CLUBS</a>
+    <a href="/about">ABOUT US</a>
+   <a href="{{ url_for('admin_view') }}">Admin View</a>
+  </nav><br><br>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Place</th>
+        <th>Date</th>
+        <th>Dept</th>
+        <th>Year</th>
+        <th>Clubs</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in members %}
+      <tr>
+        <td>{{ m.id }}</td>
+        <td>{{ m.name }}</td>
+        <td>{{ m.email }}</td>
+        <td>{{ m.phone }}</td>
+        <td>{{ m.place }}</td>
+        <td>{{ m.reg_date }}</td>
+        <td>{{ m.department }}</td>
+        <td>{{ m.year }}</td>
+        <td>{{ m.clubs }}</td>
+        <td>{{ m.message }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="back-link">
+    <a href="/algu.html">← Back to Home</a>
+  </div>
+</body>
+</html>
