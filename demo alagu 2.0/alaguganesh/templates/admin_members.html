@@ -13,7 +13,7 @@
         header {
       background-color: #062af3;
       color: white;
-      padding:5px;
+      padding:30px 0;
       /* text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
     }
@@ -92,13 +92,13 @@
       z-index: -1;
       object-fit: cover;
     } */
-     .header-flex {
+    .header-flex {
             display: flex;
             align-items: center;
             justify-content: space-between;
             max-width: 2100px;
             margin: auto;
-            padding:30px;
+            padding: 0 20px;
         }
 
         .header-flex img {
@@ -155,10 +155,13 @@
         tr:hover {
             background-color: #f1f1f1;
         }
-         @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .header-flex {
                 flex-direction: column;
                 gap: 10px;
+            }
+            .club-container {
+                grid-template-columns: 1fr;
             }
 
             .header-flex img {
@@ -174,7 +177,7 @@
       padding: 20px;
       background-color:#062af3;
       color:white;
-      margin-top: 50px;
+      margin-top: 250px;
     }
     </style>
 </head>
@@ -221,8 +224,8 @@
             <td>{{ m.email }}</td>
             <td>{{ m.phone }}</td>
             <td>{{ m.place }}</td>
-            <td>{{ m.date }}</td>
-            <td>{{ m.dept }}</td>
+            <td>{{ m.reg_date }}</td>
+            <td>{{ m.department}}</td>
             <td>{{ m.year }}</td>
             <td>{{ m.clubs }}</td>
             <td>{{ m.message }}</td>

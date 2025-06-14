@@ -17,10 +17,63 @@
     header {
       background-color: #062af3;
       color: white;
-      padding: 10px;
+      padding: 30px 0;
       text-align: center;
      
     }
+     .fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #062af3;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 13px 0;
+}
+
+.fixed-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  padding: 0 20px;
+}
+
+.fixed-header img {
+  width: 150px;
+  height: auto;
+}
+
+.text-section {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 2100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .header-flex img {
+            height: 180px; /* ✅ Uniform logo size */
+            width: auto;
+        }
+      .header-title {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .header-title h1 {
+            font-size: 35px;
+            margin: 0;
+            white-space: nowrap;
+            color: white;
+        }
     .container {
             display: flex;
             justify-content:left;
@@ -83,21 +136,32 @@
       color:white;
       margin-top: 50px;
     }
+     @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .header-flex img {
+                height: 100px;
+            }
+          }
   </style>
 </head>
 <body>
 
-  <header data-aos="fade-down">
-    <div class="container">
-        <img src="{{url_for('static',filename='image/Alagappa_University_Logo.png')}}"alt="Left Image">
+  <header class="flex-header">
+   <div class="header-flex">
+        <img src="{{url_for('static',filename='image/Alagappa_University_Logo.png')}}" alt="Left Image">
 
-        <div class="text-section">
-    <h1> ALAGAPPA UNIVERSITY</h1>
-    <h2>CLUB MEMBERSHIP MANAGEMENT PORTAL</h2>
-    </div>
-    <img src="{{url_for('static',filename='image/chettiyar.jpg')}}" alt="Right Image">
+        <div class="header-title">
+        <h1>ALAGAPPA UNIVERSITY</h1><br>
+       <h2>CLUB MEMBERSHIP MANAGEMENT PORTAL</h2>
+        </div>
+
+        <img src="{{url_for('static',filename='image/chettiyar.jpg')}}" alt="Right Image">
     </div>
   </header>
+
   <nav data-aos="zoom-in">
     <a href="/algu">HOME</a>
     <a href="/club_list">CLUBS</a>
