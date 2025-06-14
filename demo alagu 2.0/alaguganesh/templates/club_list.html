@@ -20,6 +20,35 @@
             color: white;
             padding: 30px 0;
         }
+        /* .fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #062af3;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 13px 0;
+}
+
+.fixed-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  padding: 0 20px;
+}
+
+.fixed-header img {
+  width: 150px;
+  height: auto;
+}
+
+.text-section {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+} */
 
         .header-flex {
             display: flex;
@@ -69,11 +98,11 @@
 
         h2 {
             text-align: center;
-            color:BLACK;
+            color:white;
             margin: 40px 0 20px;
             font-size: 2.5em;
         }
-        h3{
+        h2{
           color:white;
           font-size:x-large;
         }
@@ -149,6 +178,17 @@
             transform: scale(1.05);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+        .view-btn {
+         display: inline-block;
+         margin-top: 25px;
+         padding: 10px 18px;
+         font-weight: bold;
+         color:blue;
+         text-decoration: none;
+         border-radius: 5px;
+         width: fit-content;
+         transition: background-color 0.3s ease;
+        }
 
         @media (max-width: 768px) {
             .header-flex {
@@ -172,16 +212,27 @@
                 font-size: 1.8em;
             }
         }
+         footer {
+      text-align: center;
+      padding: 20px;
+      background-color:#062af3;
+      color:white;
+      margin-top: 50px;
+    }
+    h3{
+    color:black;
+    text-align: center;
+    }
     </style>
 </head>
 <body>
 
-<header>
+<header class="fixe-header">
     <div class="header-flex">
         <img src="{{ url_for('static', filename='image/Alagappa_University_Logo.png') }}" alt="Left Logo">
         <div class="header-title">
             <h1>ALAGAPPA UNIVERSITY</h1>
-            <h3>AVAILABLE CLUBS</h3>
+            <h2>CLUB MEMBERSHIP MANAGEMENT PORTAL</h2>
         </div>
         <img src="{{ url_for('static', filename='image/chettiyar.jpg') }}" alt="Right Logo">
     </div>
@@ -191,16 +242,16 @@
     <a href="/algu">HOME</a>
     <a href="/club_list">CLUBS</a>
     <a href="/about">ABOUT US</a>
+    <a href="/login">ADMIN</a>
 </nav>
 
-<h2>Explore Our Clubs</h2>
+<h3>Explore Our Clubs</h3>
 
 <div class="club-container">
     {% for c in club %}
     <div class="club-card">
         <div class="club-title">{{ c[1] }}</div>
         <div class="club-description">{{ c[2] }}</div>
-         <!-- <a class="join-button" href="../templates/nss.html">REGISTER</a> -->
     </div>
     {% endfor %}
 </div>
@@ -212,5 +263,9 @@
     </a>
 </center>
 <br><br>
+<footer>
+    &copy; 2025 Alagappa University | All rights reserved.
+  </footer>
+
 </body>
 </html>

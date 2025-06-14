@@ -81,11 +81,39 @@ def club_list():
         conn.close()
 
     return render_template('club_list.html', club=club_data)
-
+@app.route('/nss')
+def nss():
+    return render_template('nss.html')
+@app.route('/coding')
+def coding():
+    return render_template('coding.html')
 # ---------- Dummy Join Link Handler ----------
 @app.route('/join/<int:club_id>')
 def join_club(club_id):
     return f"<h1>Joining club with ID: {club_id}</h1>"
+
+# ---------- Admin View of Members ----------
+@app.route('/admin/members')
+def admin_members():
+    try:
+        conn = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            password='Digidara1000',
+            database='club'
+        )
+        cursor = conn.cursor(dictionary=True)
+
+        cursor.execute("SELECT * FROM club_members ORDER BY reg_date DESC")
+        members = cursor.fetchall()
+    except mysql.connector.Error as err:
+        return f"<h2>Error loading members: {err}</h2>"
+    finally:
+        cursor.close()
+        conn.close()
+
+    return render_template('admin_members.html', members=members)
+
 
 # ---------- Debug Route to View All Data (Optional) ----------
 @app.route('/debug_data')
@@ -107,5 +135,42 @@ def debug_data():
         cursor.close()
         conn.close()
 
+from flask import session
+app.secret_key = 'your_secret_key_here'  # Required for session handling
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        try:
+            conn = mysql.connector.connect(
+                host='localhost',
+                user='root',
+                password='Digidara1000',
+                database='club'
+            )
+            cursor = conn.cursor(dictionary=True)
+            cursor.execute("SELECT * FROM users WHERE username = %s AND password = %s", (username, password))
+            user = cursor.fetchone()
+        except mysql.connector.Error as err:
+            return f"<h2>Database error: {err}</h2>"
+        finally:
+            cursor.close()
+            conn.close()
+
+        if user:
+            session['user'] = user['username']
+            return redirect(url_for('admin_members'))
+        else:
+            error = "Invalid credentials. Please try again."
+
+    return render_template('login.html', error=error)
+
+@app.route('/logout')
+def logout():
+    session.pop('user', None)
+    return redirect(url_for('login'))
 if __name__ == '__main__':
     app.run(debug=True)
