@@ -17,7 +17,7 @@
     header {
       background-color: #062af3;
       color: white;
-      padding: 20px;
+      padding: 10px;
       text-align: center;
      
     }
@@ -64,6 +64,7 @@
       text-align: center;
       margin-bottom: 20px;
       color:white;
+     
     }
 
     p {
@@ -89,20 +90,20 @@
 
   <header data-aos="fade-down">
     <div class="container">
-        <img src="../image/Alagappa_University_Logo.png" alt="Left Image">
+        <img src="{{url_for('static',filename='image/Alagappa_University_Logo.png')}}"alt="Left Image">
 
         <div class="text-section">
     <h1> ALAGAPPA UNIVERSITY</h1>
     <h2>ABOUT US</h2>
     </div>
-    <img src="../image/chettiyar.jpg" alt="Right Image">
+    <img src="{{url_for('static',filename='image/chettiyar.jpg')}}" alt="Right Image">
     </div>
   </header>
   <nav data-aos="zoom-in">
-    <a href="/project/algu.html">HOME</a>
-    <a href="/project/reg.html">CLUBS</a>
-    <a href="../mem.html">MEMBERS</a>
-    <a href="/project/about.html">ABOUT</a>
+    <a href="/algu">HOME</a>
+    <a href="/club_list">CLUBS</a>
+    <a href="/about">ABOUT US</a>
+    <a href="/login">ADMIN</a>
   </nav>
 
   <main data-aos="fade-up">
@@ -139,6 +140,6 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000 });
-  </script>
+  </script> 
 </body>
 </html>

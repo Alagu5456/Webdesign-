@@ -10,6 +10,10 @@
       padding: 40px;
       margin: 0;
       padding: 0;
+      /* display: flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh; */
     }
     header {
       background-color:#062af3;
@@ -148,8 +152,9 @@
       display: none;
       text-align: center;
       font-size: 2.5em;
-      color: #1e05f8;
+      color: #2f05e7;
       padding: 20px;
+      
     } 
   </style>
 </head>
@@ -167,16 +172,9 @@
     <img src="{{url_for('static',filename='image/chettiyar.jpg')}}" alt="Right Image">
     </div>
   </header>
-  <nav data-aos="zoom-in">
-    <a href="/algu">HOME</a>
-    <a href="/reg">CLUBS</a>
-    <a href="/home">MEMBERS</a>
-    <a href="clubs\templates\about.html">ABOUT</a>
-  </nav>
-
   <main data-aos="fade-up"><br><br>
  <video autoplay loop muted class="video-background">
-    <source src="animi4.mp4" type="video/mp4">
+    <source src="static\animi4.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <b>
@@ -223,12 +221,12 @@
 
   <label>Clubs you want to join:</label>
   <div class="checkbox-group">
-    <label><input type="checkbox" name="clubs" value="Science Club">Science Club</label>
-    <label><input type="checkbox" name="clubs" value="Drama Club">Drama Club</label>
-    <label><input type="checkbox" name="clubs" value="Photography Club">Photography Club</label>
-    <label><input type="checkbox" name="clubs" value="Literary Club">Literary Club</label>
-    <label><input type="checkbox" name="clubs" value="Coding Club">Coding Club</label>
-    <label><input type="checkbox" name="clubs" value="Music Club">Music Club</label>
+    <label><input type="radio" name="clubs" value="Science Club">NSS Club</label>
+    <label><input type="radio" name="clubs" value="Drama Club">Coding Club</label>
+    <label><input type="radio" name="clubs" value="Photography Club">Literary Club</label>
+    <label><input type="radio" name="clubs" value="Literary Club">Robotics Club</label>
+    <label><input type="radio" name="clubs" value="Coding Club">Drama Club</label>
+    <label><input type="radio" name="clubs" value="Music Club">Music Club</label>
   </div>
 
   <label for="message">Why do you want to join?</label>

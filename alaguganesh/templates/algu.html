@@ -11,33 +11,115 @@
       box-sizing: border-box;
       font-family:'Times New Roman', Times, serif;
     }
-
-    body {
-      background: linear-gradient(135deg,rgb(8, 136, 196),rgb(13, 9, 233))
-      color(srgb red green blue) #333;
-      background-image:url('image/anna.jpg');
+body {
+     background: linear-gradient(-45deg, #74ebd5, #9face6, #ffecd2, #fcb69f);
     }
-
-    header {
+     header {
       background-color: #062af3;
       color: white;
-      padding: 15px 0;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      padding:30px;
+      /* text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
     }
+    .fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #062af3;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 13px 0;
+}
+
+.fixed-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  padding: 0 20px;
+}
+
+.fixed-header img {
+  width: 150px;
+  height: auto;
+}
+
+.text-section {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 150px; /* Adjust based on your header height */
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  z-index: 998;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.fixed-nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.fixed-nav a:hover {
+  color: #ffeb3b;
+}
+
     .container {
             display: flex;
             justify-content:left;
             align-items: left;
             margin-top: 50px;
-            gap: 100px; /* space between items */
+            gap: 350px; /* space between items */
         }
 
         .container img {
             width: 200px;
             height: auto;
         }
+      /* .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    } */
+     .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 2100px;
+            margin: auto;
+            padding: 0 20px;
+        }
 
+        .header-flex img {
+            height: 180px; /* ✅ Uniform logo size */
+            width: auto;
+        }
+      .header-title {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .header-title h1 {
+            font-size: 35px;
+            margin: 0;
+            white-space: nowrap;
+            color: white;
+        }
     nav {
       background-color:white;
       display: flex;
@@ -101,14 +183,23 @@
       margin-top: 40px;
     }
 
-    @media (max-width: 600px) {
+    /* @media (max-width: 600px) {
       .hero h1 {
         font-size: 2em;
-      }
+      } */
+       @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                gap: 10px;
+            }
 
-      .hero p {
+            .header-flex img {
+                height: 100px;
+            }
+
+      /* .hero p {
         font-size: 1em;
-      }
+      } */
     }
     
         .slides{
@@ -170,17 +261,13 @@
 </head>
 <body>
 
-  <header>
-   <div class="container">
+  <header class="flex-header">
+   <div class="header-flex">
         <img src="{{url_for('static',filename='image/Alagappa_University_Logo.png')}}" alt="Left Image">
 
-        <div class="text-section">
-          <h1>அழகப்பா பல்கலைக்கழகம்</h1>
+        <div class="header-title">
         <h1>ALAGAPPA UNIVERSITY</h1><br>
-        <p>
-ALAGAPPA UNIVERSITY
-State University | A++ by NAAC (CGPA : 3.59) Dual Mode in the 4th Cycle | Category - I University by UGC
-Karaikudi - 630 003, Tamil Nadu, India</p>
+       <h2>CLUB MEMBERSHIP MANAGEMENT PORTAL</h2>
         </div>
 
         <img src="{{url_for('static',filename='image/chettiyar.jpg')}}" alt="Right Image">
@@ -188,12 +275,13 @@ Karaikudi - 630 003, Tamil Nadu, India</p>
   </header><hr>
 
 
-  <nav>
+  <nav >
     <a href="/algu">HOME</a>
-    <a href="/reg">CLUBS</a>
-    <a href="/clubs/templates/mem.html">MEMEBERS</a>
-    <a href="/project/about.html">ABOUT US</a>
-  </nav>
+    <a href="/club_list">CLUBS</a>
+    <a href="/about">ABOUT US</a>
+    <a href="/login">ADMIN</a>
+    
+  </nav><br><br>
   <main>
     <center>
         <section>
@@ -205,25 +293,23 @@ Karaikudi - 630 003, Tamil Nadu, India</p>
 </div><br><br>
 <div class="video-container">
 <video autoplay muted playsinline>
-      <source src="/static/videoplayback.mp4" type="video/mp4">
-      <source src="/About Alagappa University Short Video.mp4" type="video/mp4">
+      <source src="static\videoplayback.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     </div><br>
-    <hr><h3>PHOTO GALLERY</h3>
+    <hr><h3><center>PHOTO GALLERY</center></h3>
 <div class="gallery"><hr>
   <img src="{{url_for('static',filename='image/gal1.jpg')}}" alt="gallery1"/>
   <img src="{{url_for('static',filename='image/gal2.jpg')}}" alt="gallery2"/>
   <img src="{{url_for('static',filename='image/gal3.jpg')}}" alt="gallery3"/>
-  <img src="{{url_for('static',filename='image/gal5.jpg')}}" alt="gallery4"/>
-</div>
-
-    </main>
-
+  <img src="{{url_for('static',filename='image/gal4.jpg')}}" alt="gallery4"/>
+ </div>
+ </main>
   <footer>
     &copy; 2025 My College | All rights reserved
   </footer>
-  <script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
 // Automatic Slideshow - change image every 3 seconds
 var myIndex = 0;
 carousel();
@@ -255,6 +341,5 @@ function carousel() {
     }
 }
 </script>
-
 </body>
 </html>

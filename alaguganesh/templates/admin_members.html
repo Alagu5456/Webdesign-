@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Registered Members</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            background: linear-gradient(to right, #e0f7fa, #fffde7);
+            padding:0;
+            margin:0;
+        }
+        header {
+      background-color: #062af3;
+      color: white;
+      padding:10px;
+      /* text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+    }
+    .fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #062af3;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 13px 0;
+}
+
+.fixed-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  padding: 0 20px;
+}
+
+.fixed-header img {
+  width: 150px;
+  height: auto;
+}
+
+.text-section {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 150px; /* Adjust based on your header height */
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  z-index: 998;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.fixed-nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.fixed-nav a:hover {
+  color: #ffeb3b;
+}
+
+    .container {
+            display: flex;
+            justify-content:left;
+            align-items: left;
+            margin-top: 50px;
+            gap: 350px; /* space between items */
+        }
+
+        .container img {
+            width: 200px;
+            height: auto;
+        }
+      /* .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    } */
+     .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 2100px;
+            margin: auto;
+            padding:30px;
+        }
+
+        .header-flex img {
+            height: 180px; /* ✅ Uniform logo size */
+            width: auto;
+        }
+      .header-title {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .header-title h1 {
+            font-size: 35px;
+            margin: 0;
+            white-space: nowrap;
+            color: white;
+        }
+    nav {
+      background-color:white;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color:rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+        h2 {
+            text-align: center;
+            color:white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+         @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header-flex img {
+                height: 100px;
+            }
+
+      /* .hero p {
+        font-size: 1em;
+      } */
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color:#062af3;
+      color:white;
+      margin-top: 50px;
+    }
+    </style>
+</head>
+<body>
+    <header class="flex-header">
+   <div class="header-flex">
+        <img src="{{url_for('static',filename='image/Alagappa_University_Logo.png')}}" alt="Left Image">
+
+        <div class="header-title">
+        <h1>ALAGAPPA UNIVERSITY</h1><br>
+       <h2>ADMIN PORTAL</h2>
+        </div>
+
+        <img src="{{url_for('static',filename='image/chettiyar.jpg')}}" alt="Right Image">
+    </div>
+  </header>
+
+
+  <nav >
+    <a href="/algu">HOME</a>
+    <a href="/club_list">CLUBS</a>
+    <a href="/about">ABOUT US</a>
+    <a href="/login">ADMIN</a>
+    
+  </nav><br><br>
+    <h2>Registered Club Members</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Place</th>
+            <th>Date</th>
+            <th>Department</th>
+            <th>Year</th>
+            <th>Clubs</th>
+            <th>Message</th>
+        </tr>
+        {% for m in members %}
+        <tr>
+            <td>{{ m.id }}</td>
+            <td>{{ m.name }}</td>
+            <td>{{ m.email }}</td>
+            <td>{{ m.phone }}</td>
+            <td>{{ m.place }}</td>
+            <td>{{ m.date }}</td>
+            <td>{{ m.dept }}</td>
+            <td>{{ m.year }}</td>
+            <td>{{ m.clubs }}</td>
+            <td>{{ m.message }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <footer>
+    &copy; 2025 Alagappa University | All rights reserved.
+  </footer>
+
+</body>
+</html>
